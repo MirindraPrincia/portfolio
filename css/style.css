@@ -1016,7 +1016,7 @@ img {
 
 
 .contact_section {
-	margin: 0 0 60px 0;
+	margin: 0 0 0 0;
 }
 
 .contact_section h2 {
@@ -1231,14 +1231,39 @@ img {
 
 .footer_section {
 	background: url(../img/pattern_bg.jpg) repeat left top;
-	padding-top: 40px;
 	/* ajuste selon besoin */
-	padding-bottom: 20px;
+	padding: 5px 0;
+
+}
+
+/* Supprimer marges inutiles dans le footer */
+.footer_section h2,
+.footer_section p,
+.footer_section .social-link,
+.footer_section .contact_block {
+	margin: 0;
+	padding: 0;
+}
+
+/* Ajouter juste un petit espacement si nécessaire */
+.footer_section h2 {
+	margin-bottom: 10px;
+	/* titre séparé légèrement des icônes */
+}
+
+.footer_section .social-link {
+	margin-top: 10px;
+	/* petit espace avant les icônes */
+}
+
+.footer_bottom {
+	margin-top: 10px;
+	/* réduit l'espace après les icônes */
+	padding: 5px 0;
 }
 
 .footer_bottom {
 	border-top: 1px solid #333333;
-	padding: 40px 0;
 }
 
 .footer_bottom span {
@@ -1279,7 +1304,6 @@ img {
 .footer_section .form textarea.input-text {
 	width: 100%;
 	/* Remplit le conteneur */
-	padding: 10px 15px;
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	font-size: 16px;
