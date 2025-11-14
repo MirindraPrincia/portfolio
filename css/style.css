@@ -476,22 +476,38 @@ a.learn_more2:hover {
 	line-height: 1.6;
 }
 
+/* Assure que tous les éléments calculent la largeur en incluant padding/border */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Paragraphes dans les blocs de travail */
 #work_outer .service-list-col2 p {
 	margin: 0 0 15px 0;
-	/* marge en bas pour espacer les paragraphes */
 	padding: 0;
-	/* si tu veux un padding interne, tu peux mettre par exemple 5px 0 */
 	font-size: 1.6rem;
 	line-height: 1.5;
 	text-align: justify;
 }
 
+/* Version mobile */
 @media (max-width: 767px) {
+	#work_outer .service-list-col2 {
+		padding: 0 15px;
+		width: 100%;
+		/* s'assure que le conteneur ne dépasse pas */
+		overflow-wrap: break-word;
+		/* casse les mots trop longs */
+	}
+
 	#work_outer .service-list-col2 p {
-		margin: 0 0 10px 0;
-		padding: 0 10px;
+		margin-bottom: 10px;
+		padding: 0;
 	}
 }
+
 
 /* Titres */
 #work_outer .service-list h3 {
