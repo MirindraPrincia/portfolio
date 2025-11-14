@@ -780,9 +780,7 @@ img {
 	margin: 0 20px;
 }
 
-.main-section.team {
-	padding: 85px 0;
-}
+
 
 .main-section.team h6 {
 	margin-bottom: 40px;
@@ -792,6 +790,40 @@ img {
 /* Team
 ---------------------------------*/
 /* Section Technologies */
+.techno-block {
+	display: flex;
+	flex-wrap: wrap;
+	/* permet plusieurs lignes si besoin */
+	justify-content: center;
+	/* centre horizontalement */
+	gap: 2rem;
+	/* espace entre les catégories */
+	max-width: 1200px;
+	/* largeur maximale du bloc */
+	margin: 0 auto;
+	/* centre le bloc sur la page */
+	padding: 2rem 1rem;
+	/* espace intérieur */
+}
+
+.techno-category {
+	flex: 1 1 250px;
+	/* chaque bloc prend au moins 250px */
+	box-sizing: border-box;
+	text-align: justify;
+	/* texte justifié à l’intérieur */
+}
+
+.techno-category h3 {
+	text-align: center;
+	/* titre centré dans chaque bloc */
+	font-size: 1.8rem;
+}
+
+.techno-category p {
+	font-size: 1.6rem;
+}
+
 #techno {
 	background: none;
 	min-height: 100vh;
