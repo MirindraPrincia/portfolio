@@ -1198,6 +1198,9 @@ img {
 
 .footer_section {
 	background: url(../img/pattern_bg.jpg) repeat left top;
+	padding-top: 40px;
+	/* ajuste selon besoin */
+	padding-bottom: 20px;
 }
 
 .footer_bottom {
