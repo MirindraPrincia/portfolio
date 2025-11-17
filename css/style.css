@@ -207,9 +207,6 @@ p {
 	color: #49b5e7;
 }
 
-
-
-
 /* Top_content
 ---------------------------------*/
 /* Enlève le padding/margin en haut de la section */
@@ -325,6 +322,88 @@ a.learn_more2:hover {
 
 
 
+.right-animations {
+	position: relative;
+	height: 100%;
+}
+
+/* forme de base */
+.floating-shape {
+	position: absolute;
+	border-radius: 50%;
+	opacity: 0.6;
+	animation: float 6s ease-in-out infinite;
+}
+
+/* différentes formes et positions */
+.shape1 {
+	width: 50px;
+	height: 50px;
+	background-color: #f39c12;
+	top: 20%;
+	left: 10%;
+	animation-delay: 0s;
+}
+
+.shape2 {
+	width: 30px;
+	height: 30px;
+	background-color: #e74c3c;
+	top: 50%;
+	left: 30%;
+	animation-delay: 2s;
+}
+
+.shape3 {
+	width: 40px;
+	height: 40px;
+	background-color: #3498db;
+	top: 70%;
+	left: 50%;
+	animation-delay: 4s;
+}
+
+.shape4 {
+	width: 60px;
+	height: 60px;
+	background-color: #394cb9;
+	top: 80%;
+	left: 75%;
+	animation-delay: 1s;
+}
+
+.shape5 {
+	width: 40px;
+	height: 40px;
+	background-color: hsl(59, 100%, 58%);
+	top: 80%;
+	left: 65%;
+	animation-delay: 2s;
+}
+
+.shape6 {
+	width: 30px;
+	height: 30px;
+	background-color: hsl(310, 100%, 58%);
+	top: 80%;
+	left: 90%;
+	animation-delay: 3s;
+}
+
+/* animation flottante */
+@keyframes float {
+	0% {
+		transform: translateY(0px);
+	}
+
+	50% {
+		transform: translateY(70px);
+	}
+
+	100% {
+		transform: translateY(0px);
+	}
+}
 
 
 
@@ -922,6 +1001,7 @@ img {
 		width: 80%;
 		text-align: center;
 	}
+
 }
 
 /* Twitter Feed
@@ -1117,16 +1197,26 @@ img {
 }
 
 .social-link {
-
-	display: block;
 	overflow: hidden;
 	list-style: none;
+	padding: 0;
+	margin: 20px 0;
+	display: flex;
+	justify-content: center;
+	/* centre les 3 icônes */
+	gap: 40px;
 }
 
 .social-link li {
-	float: left;
-	margin-right: 8px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* centre icône + texte */
+	text-align: center;
+}
 
+.social-link li a i {
+	font-size: 28px;
 }
 
 .social-link li a {
@@ -1142,6 +1232,14 @@ img {
 	background: #222222;
 	border-radius: 50%;
 	transition: all 0.3s ease-in-out;
+}
+
+.social-link li p {
+	margin-top: 6px;
+	/* espace fixe entre icône et titre */
+	font-size: 12px;
+	text-transform: capitalize;
+	line-height: 1;
 }
 
 .social-link li a:hover,
@@ -1211,7 +1309,7 @@ img {
 	letter-spacing: 0px;
 	background: #7cc576;
 	border-radius: 3px;
-	color: #ffffff;
+	color: #f56eab;
 	font-size: 16px;
 	text-transform: uppercase;
 	font-weight: 600;
@@ -1315,7 +1413,8 @@ img {
 	width: 150px;
 	padding: 10px;
 	font-size: 16px;
-	background-color: #007bff;
+	background-color: #e27aa9;
+	;
 	/* Bleu, tu peux changer */
 	color: #fff;
 	border: none;
@@ -1327,7 +1426,8 @@ img {
 }
 
 .footer_section .form input.input-btn:hover {
-	background-color: #0056b3;
+	background-color: lab(24.45% 47.63 3.29);
+	;
 	/* Changement couleur au survol */
 }
 
@@ -2017,4 +2117,32 @@ div.mc-image {
 .in-slide-content div.info-slide:hover p {
 	display: inherit;
 	padding: 0;
+}
+
+
+
+#statusMessage {
+	font-size: 18px;
+	/* texte un peu plus grand */
+	font-weight: bold;
+	/* mettre en évidence */
+	margin-top: 10px;
+	transition: color 0.3s;
+	/* transition douce pour le changement de couleur */
+}
+
+/* couleur selon le statut */
+#statusMessage.sending {
+	color: hsl(39, 66%, 75%);
+	/* orange pour "envoi en cours" */
+}
+
+#statusMessage.success {
+	color: #28a745;
+	/* vert pour message envoyé */
+}
+
+#statusMessage.error {
+	color: #dc3545;
+	/* rouge pour erreur */
 }
