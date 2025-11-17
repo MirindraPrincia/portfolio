@@ -234,19 +234,24 @@ p {
 
 }
 
-.profile-pic img {
-	width: 250px;
-	/* taille de l'image */
-	height: 250px;
-	object-fit: cover;
-	/* garde le ratio et découpe si nécessaire */
+
+
+.profile-pict {
+	width: 200px;
+	height: 200px;
+	background-image: url('../img/pdp.jpg');
+	/* chemin correct */
+	background-size: cover;
+	background-position: center;
+	pointer-events: none;
+	user-select: none;
 	border-radius: 50%;
-	/* rend l'image ronde */
 	border: 3px solid #fff;
-	/* facultatif : contour blanc */
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-	/* optionnel : ombre */
+	margin-bottom: 20px;
+	/* espace entre image et texte */
 }
+
 
 .top_content {
 	position: relative;
@@ -265,8 +270,11 @@ p {
 }
 
 .top_left_cont {
-	padding: 110px 0;
-
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
 }
 
 .top_left_cont h3 {
