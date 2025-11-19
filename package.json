@@ -5,6 +5,9 @@
   "main": "index.html",
   "description": "my portfolio",
   "keywords": [],
+  "scripts": {
+    "start": "node server.js"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
