@@ -23,7 +23,7 @@ export default async function handler(req, res) {
     await transporter.sendMail({
       from: email,
       to: process.env.GMAIL_USER,
-      subject: "Message PORTFOLIO",
+      subject: `By ${name}`,
       html: `<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; margin:0; padding:0;">
       <div style="max-width:600px; margin:20px auto; padding:20px; background-color:#ffffff; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
         <div style="background-color:#007bff; color:#fff; padding:15px; border-radius:8px 8px 0 0; text-align:center;">
@@ -34,7 +34,9 @@ export default async function handler(req, res) {
           <p><strong>Nom :</strong> ${name}</p>
           <p><strong>Email :</strong> ${email}</p>
           <p><strong>Message :</strong></p>
-          <p style="font-size:16px; line-height:1.5; color:#555;">${message}</p>
+          <p style="font-size:16px; line-height:1.5; color:#555; background-color:#f5f5dc; padding:10px; border-radius:4px;">
+           ${message}
+          </p>
         </div>
         <div style="text-align:center; font-size:12px; color:#777; margin-top:20px;">
           <p>Ce message a été envoyé via le site web.</p>
