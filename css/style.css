@@ -327,8 +327,19 @@ a.learn_more2:hover {
 	background: #222222;
 }
 
+.top_left_cont .learn_more2 {
+	display: inline-block;
+	margin-bottom: 25px;
+	display: inline-block;
+	margin-top: 20px;
+}
 
-
+@media (max-width: 768px) {
+	.top_left_cont .learn_more2 {
+		margin-top: 25px;
+		margin-bottom: 25px;
+	}
+}
 
 .right-animations {
 	position: relative;
@@ -414,6 +425,90 @@ a.learn_more2:hover {
 }
 
 
+.project-img {
+	width: 100%;
+	height: 200px;
+	border-radius: 5px;
+	background-image: url("/img/bob.JPG");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	user-select: none;
+	pointer-events: none;
+}
+
+@media (max-width: 768px) {
+	.project-img {
+		height: 160px;
+		border-radius: 10px;
+	}
+}
+
+/* Container */
+.work_bottom {
+	text-align: center;
+	margin-top: 40px;
+	padding: 20px 20px;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: row;
+	/* <-- texte et bouton côte à côte */
+	align-items: center;
+	/* centre verticalement */
+	justify-content: center;
+	/* centre horizontalement */
+	gap: 20px;
+	/* espace entre texte et bouton */
+}
+
+/* Texte */
+.work_bottom span {
+	font-size: 1.8rem;
+	font-weight: 600;
+	color: #333;
+}
+
+/* Bouton avec largeur limitée */
+.work_bottom .contact_btn {
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 1.4rem;
+	font-weight: 600;
+	color: white;
+	background: #28a8f1;
+	border-radius: 10px;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	width: 200px;
+	max-width: 80%;
+	text-align: center;
+}
+
+/* Hover */
+.work_bottom .contact_btn:hover {
+	background: #bf9ef3;
+	transform: translateY(-2px);
+	box-shadow: 0 6px 12px rgba(92, 7, 207, 0.2);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+	.work_bottom {
+		flex-direction: column;
+		/* texte au-dessus du bouton sur mobile */
+		gap: 15px;
+		padding: 15px;
+	}
+
+	.work_bottom span {
+		font-size: 1.5rem;
+	}
+
+	.work_bottom .contact_btn {
+		width: 150px;
+		font-size: 1.2rem;
+	}
+}
 
 
 
@@ -493,14 +588,7 @@ a.learn_more2:hover {
 }
 
 
-
-/* Latest Work
----------------------------------*/
-
-/* Latest Work
----------------------------------*/
-
-/* Section globale : plus de background et centré verticalement */
+/* Conteneur global */
 #work_outer {
 	background: none;
 	/* supprime le background */
@@ -517,144 +605,99 @@ a.learn_more2:hover {
 	box-sizing: border-box;
 }
 
-/* Conteneur principal */
 #work_outer .work_section {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
 	width: 100%;
-	max-width: 900px;
+	max-width: 850px;
+	/* 👈 limite la largeur (MET FIN AU PROBLÈME !) */
+	margin: 0 auto;
+	/* centre le bloc */
+	padding: 20px;
 }
 
-/* Chaque élément de travail */
+/* SECTION DESKTOP */
 #work_outer .service-list {
-	margin: 25px auto;
-	/* centré et espacé */
 	display: flex;
-	align-items: flex-start;
 	flex-direction: row;
+	align-items: flex-start;
+	/* 👈 meilleur alignement */
+	gap: 15px;
 	width: 100%;
+	margin: 25px 0;
 }
 
-/* Icônes à gauche */
+/* Colonne icône */
 #work_outer .service-list-col1 {
-	width: 80px;
-	/* un peu plus grand */
+	width: 55px;
 	display: flex;
-	align-items: flex-start;
 	justify-content: center;
-	margin-right: 20px;
+	padding-top: 4px;
+	/* aligne mieux avec le titre */
+	flex-shrink: 0;
 }
 
 #work_outer .service-list-col1 i {
-	font-size: 3rem;
-	/* agrandi */
-	color: #888;
+	font-size: 2.8rem;
+	color: #666;
 }
 
-/* Texte à droite */
+/* Colonne texte */
 #work_outer .service-list-col2 {
 	flex: 1;
 	text-align: left;
-	font-size: 1.2rem;
-	/* agrandi */
-	line-height: 1.6;
 }
 
-/* Assure que tous les éléments calculent la largeur en incluant padding/border */
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
+/* Titres */
+#work_outer .service-list-col2 h3 {
+	margin: 0 0 6px;
+	font-size: 1.7rem;
 }
 
-/* Paragraphes dans les blocs de travail */
+/* Paragraphes justifiés */
 #work_outer .service-list-col2 p {
-	margin: 0 0 15px 0;
-	padding: 0;
-	font-size: 1.6rem;
-	line-height: 1.5;
+	margin: 0;
+	font-size: 1.55rem;
+	line-height: 1.55;
 	text-align: justify;
 }
 
-/* Version mobile */
-@media (max-width: 767px) {
-	#work_outer .service-list-col2 {
-		padding: 0 15px;
-		width: 100%;
-		/* s'assure que le conteneur ne dépasse pas */
-		overflow-wrap: break-word;
-		/* casse les mots trop longs */
-	}
+/* ----------------------------- */
+/* 📱 VERSION MOBILE (PARFAITE) */
+/* ----------------------------- */
 
-	#work_outer .service-list-col2 p {
-		margin-bottom: 10px;
-		padding: 0;
-	}
-}
-
-
-/* Titres */
-#work_outer .service-list h3 {
-	font-size: 1.6rem;
-	/* titres plus grands */
-	margin-bottom: 10px;
-}
-
-/* Bouton contact */
-#work_outer .work_bottom {
-	margin-top: 40px;
-	text-align: center;
-}
-
-#work_outer .work_bottom span {
-	font-size: 20px;
-	/* un peu plus grand */
-	color: #333;
-	display: block;
-	margin-bottom: 20px;
-}
-
-a.contact_btn {
-	background: #f56eab;
-	text-transform: uppercase;
-	display: inline-block;
-	width: 200px;
-	/* légèrement plus large */
-	height: 55px;
-	/* un peu plus grand */
-	line-height: 55px;
-	font-size: 17px;
-	/* agrandi */
-	color: #fff;
-	border-radius: 4px;
-	font-weight: 600;
-	transition: all 0.2s ease-in-out;
-}
-
-a.contact_btn:hover {
-	background: #222;
-}
-
-/* Responsive mobile */
 @media (max-width: 768px) {
-	#work_outer .service-list {
-		flex-direction: column;
-		text-align: center;
+
+	#work_outer .work_section {
+		max-width: 95%;
+		/* 👈 laisse de l'espace sur les côtés */
+		padding: 10px 5px;
 	}
 
-	#work_outer .service-list-col2 {
-		text-align: center;
+	#work_outer .service-list {
+		gap: 10px;
+		align-items: flex-start;
+		/* icône + h3 bien alignés */
 	}
 
 	#work_outer .service-list-col1 {
-		margin-right: 0;
-		margin-bottom: 10px;
+		width: 38px;
+		padding-top: 6px;
+	}
+
+	#work_outer .service-list-col1 i {
+		font-size: 2.3rem;
+	}
+
+	#work_outer .service-list-col2 h3 {
+		font-size: 1.45rem;
+		margin-top: 0;
+	}
+
+	#work_outer .service-list-col2 p {
+		font-size: 1.3rem !important;
+		margin-top: 5px;
+		line-height: 1.45;
 	}
 }
-
 
 
 /* Portfolio
@@ -998,18 +1041,32 @@ img {
 	color: #333;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
 	.techno-block {
 		flex-direction: column;
-		align-items: center;
+		gap: 15px;
+		/* réduit l’espace entre catégories */
+		margin-top: 15px;
+		/* moins d’espace au-dessus */
 	}
 
 	.techno-category {
-		width: 80%;
-		text-align: center;
+		flex: 1 1 100%;
+		max-width: 100%;
+		padding: 8px 6px;
+		/* padding réduit pour mobile */
 	}
 
+	.techno-category h3 {
+		font-size: 1.4rem;
+		margin-bottom: 5px;
+		/* réduit le gap sous le titre */
+	}
+
+	.techno-category p {
+		font-size: 1.3rem;
+		line-height: 1.4;
+	}
 }
 
 /* Twitter Feed
