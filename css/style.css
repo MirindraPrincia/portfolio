@@ -1301,7 +1301,6 @@ img {
 
 .social-link li p {
 	margin-top: 6px;
-	/* espace fixe entre icône et titre */
 	font-size: 12px;
 	text-transform: capitalize;
 	line-height: 1;
@@ -1335,6 +1334,37 @@ img {
 .form {
 	margin: 0 66px 0 30px;
 }
+
+@media (max-width: 768px) {
+
+	/* Annule les paddings qui décalent */
+	.container,
+	.row,
+	.contact_section,
+	.col-lg-6,
+	.col-md-12 {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	/* Centre la colonne qui contient le formulaire */
+	.col-lg-6.col-md-12.wow.fadeInUp.delay-06s {
+		display: flex !important;
+		justify-content: center !important;
+		width: 100% !important;
+	}
+
+	/* Centre le formulaire lui-même */
+	#contactForm {
+		margin-left: auto !important;
+		margin-right: auto !important;
+		display: block !important;
+		max-width: 420px !important;
+		width: 100% !important;
+		text-align: center !important;
+	}
+}
+
 
 .input-text {
 	padding: 15px 16px;
@@ -1449,17 +1479,14 @@ img {
 	color: #fff;
 }
 
-/* Conteneur du formulaire */
 .footer_section .form {
-	max-width: 600px;
-	/* Limite la largeur du formulaire */
-	margin: 0 auto;
-	/* Centre horizontalement */
+	width: 100%;
+	max-width: 450px;
 	display: flex;
 	flex-direction: column;
-	/* Les champs sont empilés verticalement */
 	gap: 15px;
-	/* Espacement entre les champs */
+	padding: 0 15px;
+	box-sizing: border-box;
 }
 
 /* Champs input et textarea */
@@ -1499,13 +1526,10 @@ img {
 .footer_section .social-link {
 	display: flex;
 	justify-content: center;
-	/* centre horizontalement sur tout écran */
 	align-items: center;
-	/* centre verticalement */
 	margin-top: 20px;
 	padding: 0;
 	list-style: none;
-	/* supprime les puces */
 	gap: 20px;
 	/* espace entre icônes */
 }
@@ -2210,4 +2234,72 @@ div.mc-image {
 #statusMessage.error {
 	color: #dc3545;
 	/* rouge pour erreur */
+}
+
+
+
+@media (max-width: 600px) {
+
+	/* rétablit le padding visuel des inputs */
+	.input-text,
+	textarea.input-text {
+		padding: 15px 16px !important;
+		width: 100% !important;
+		box-sizing: border-box !important;
+	}
+
+	/* centre le formulaire */
+	#contactForm {
+		padding-left: 15px !important;
+		padding-right: 15px !important;
+	}
+}
+
+@media (max-width: 1024px) {
+
+	/* Corrige le container bootstrap qui pousse tout à gauche */
+	.footer_section .container,
+	.footer_section .row,
+	.footer_section .col-lg-6,
+	.footer_section .col-md-12 {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		margin-left: auto !important;
+		margin-right: auto !important;
+	}
+
+	/* Force la colonne du formulaire à être centrée */
+	.footer_section .col-lg-6.col-md-12.wow.fadeInUp.delay-06s {
+		display: flex !important;
+		justify-content: center !important;
+		width: 100% !important;
+	}
+
+	/* Formulaire centré */
+	#contactForm {
+		width: 100% !important;
+		max-width: 420px !important;
+		margin: 0 auto !important;
+		text-align: center !important;
+	}
+}
+
+@media (min-width: 1025px) and (max-width: 1600px) {
+
+	/* Colonne du formulaire */
+	.footer_section .col-lg-6.col-md-12.wow.fadeInUp.delay-06s {
+		display: flex !important;
+		justify-content: center !important;
+		align-items: flex-start !important;
+		/* top align si tu veux */
+	}
+
+	/* Formulaire lui-même */
+	#contactForm {
+		margin-left: auto !important;
+		margin-right: auto !important;
+		max-width: 420px !important;
+		width: 100% !important;
+		text-align: center !important;
+	}
 }
